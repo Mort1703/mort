@@ -16,7 +16,7 @@ def welcome(message):
 	bot.send_stiker(message.chat.id, sti)
 
 #Кнопочки для бота
-	markup = typees.ReplyKeyBoardMarkup(resiza_keyboard = True)
+	markup = types.ReplyKeyBoardMarkup(resiza_keyboard = True)
 	item1 = types.keyboardButton('Информация')
 	item2 = types.keyboardButton('Что я могу делать')
 	iten3 = types.keyboardButton('Разработчик')
@@ -36,19 +36,20 @@ def lalala(message):
 
 	if message.chat.types == 'privet':
 
+
 		if message.text == 'Что я могу делать':
-			bot.send_message(message.chat.id,"Все что я умею это глотать слюну")
+			bot.send_message(message.chat.id,'Все что я умею это глотать слюну')
 			bot.send_message(message.chat.id, 'Что вам нужно ?', reply_markup=markup)
 
- 		elif message.text == 'Разработчик':
+		elif message.text == 'Разработчик':
  			bot.send_message(message.chat.id, 'Привет, я морт пытаюсь тут на говнокодить. Может быть Сережка похвалит')
 
- 		elif message.text == "Информация":
+		elif message.text == 'Информация':
  			bot.send_message(message.chat.id, 'Пока еще не придумал')
 
 
- 	except Exception as e:
- 		print(repr(e))
+# except Exception as e:
+# 	print(repr(e))
 
 
 bot.polling(none_stop=True)
